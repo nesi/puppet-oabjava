@@ -1,29 +1,27 @@
-# blank
+# oabjava
 
-This is a blank puppet module.
+The oabjava puppet module uses the oab-java script to create a local apt repository for Oracle Java 6 and Oracle Java 7 that complies with Oracles licensing.
 
-*NOTE:* Check README1st.markdown for usage of the blank puppet module template.
+Oracle Java 6 is the latest distribution of Sun Java 6.
 
-# Licensing
-
-Update your license details here.
+*NOTE:* This module MUST only be used if the Oracle license is agreed to: http://www.oracle.com/technetwork/java/javase/terms/license/
 
 # Attribution
 
-This module is derived from the puppet-blank module by Aaron Hicks (aethylred@gmail.com)
-
-* https://github.com/Aethylred/puppet-blank
+## Open Source Puppet
 
 This module has been developed for the use with Open Source Puppet (Apache 2.0 license) for automating server & service deployment.
 
 * http://puppetlabs.com/puppet/puppet-open-source/
 
-# Gnu General Public License
+## oab-java
 
-This file is part of the blank Puppet module.
+This module installs and uses the features provided by the `oab-java` script developed by Martin Wimpress (http://flexion.org) under the MIT License.
 
-The blank Puppet module is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+* https://github.com/flexiondotorg/oab-java6
 
-The blank Puppet module is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+# Licencing
 
-You should have received a copy of the GNU General Public License along with the blank Puppet module.  If not, see <http://www.gnu.org/licenses/>.
+This module is openly licensed and can be freely copied and modified with attribution, but as it is used to install software covered by a restrictive and propriatary commercial license, this module CAN NOT be used unless the Oracle license has been read and agreed with.
+
+* http://www.oracle.com/technetwork/java/javase/terms/license/
