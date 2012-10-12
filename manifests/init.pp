@@ -1,6 +1,7 @@
 # Class: oabjava
 #
-# This module manages oabjava
+# This module manages the basic oabjava install and does the sanity checking
+# and any pre-installation actions or checks.
 #
 # Parameters:
 # 		java7 			- Build Java 7 packages instead of Java 6 (the default)
@@ -10,6 +11,7 @@
 # Actions:
 #
 # Requires:
+#		git				- Requires the nesi/git Puppet module
 #
 # Sample Usage:
 #
@@ -20,6 +22,18 @@ class oabjava (
 	$clean_old_pkgs	= false,
 	$skip_if_built	= true
 ){
+
+	require Class['git']
+
+	case $operatingsystem {
+		/^(Debian|Ubuntu)$/:{
+			include oabjava::params
+			include oabjava::install
+		}
+		default:{
+			warning("The oabjava Puppet module is not configured for ${operatingsystem} on ${fqdn}.")
+		}
+	}
 
 
 }
