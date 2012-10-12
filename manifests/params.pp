@@ -25,5 +25,6 @@ class oabjava::params{
 	$install_bin	= "${install_dir}/${binary}"
 	$exec_bin		= "${bin_dir}/${binary}"
 	$git_source		= "git://github.com/flexiondotorg/oab-java6.git"
+	$work_path		= "/usr/local/oab"
 
 }

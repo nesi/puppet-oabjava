@@ -7,6 +7,7 @@
 # 		java7 			- Build Java 7 packages instead of Java 6 (the default)
 #		clean_old_pkgs	- Clean out previously existing Java packages from the apt cache
 #		skip_if_built	- Skip building packages if they already exist
+#		gpg_key			- Sets the GPG key of the local repo unless false
 #
 # Actions:
 #
@@ -20,7 +21,9 @@
 class oabjava (
 	$java7			= false,
 	$clean_old_pkgs	= false,
-	$skip_if_built	= true
+	$skip_if_built	= true,
+	$gpg_key		= false,
+	$update			= false
 ){
 
 	require Class['git']
@@ -28,7 +31,15 @@ class oabjava (
 	case $operatingsystem {
 		/^(Debian|Ubuntu)$/:{
 			include oabjava::params
-			include oabjava::install
+			class{'oabjava::install':
+				update	=> $update,
+			} 
+			class{'oabjava::run':
+				java7 			=> $java7,
+				clean_old_pkgs 	=> $clean_old_pkgs,
+				skip_if_built 	=> $skip_if_built,
+				gpg_key 		=> $gpg_key,
+			}
 		}
 		default:{
 			warning("The oabjava Puppet module is not configured for ${operatingsystem} on ${fqdn}.")

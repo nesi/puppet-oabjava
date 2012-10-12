@@ -27,9 +27,8 @@ class oabjava::install(
 		source	=> $oabjava::params::git_source,
 	}
 
-	file{'link_oabjava_bin':
+	file{$oabjava::params::exec_bin:
 		ensure	=> link,
-		path	=> $oabjava::params::exec_bin,
 		target	=> $oabjava::params::install_bin,
 		mode 	=> '0744',
 		require => Git::Repo['oab-java'],
