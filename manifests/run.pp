@@ -53,7 +53,7 @@ class oabjava::run(
 
 	exec{'run_oabjava':
 		command => $oabjava_command,
-		creates => $oabjava::params::work_path
+		creates => $oabjava::params::work_path,
 		require => File[$oabjava::params::exec_bin],
 	}
 }

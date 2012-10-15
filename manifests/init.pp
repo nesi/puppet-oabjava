@@ -35,10 +35,10 @@ class oabjava (
 				update	=> $update,
 			} 
 			class{'oabjava::run':
-				java7 			=> $java7,
+				java7 					=> $java7,
 				clean_old_pkgs 	=> $clean_old_pkgs,
 				skip_if_built 	=> $skip_if_built,
-				gpg_key 		=> $gpg_key,
+				gpg_key 				=> $gpg_key,
 			}
 		}
 		default:{
