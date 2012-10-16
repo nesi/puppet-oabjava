@@ -19,7 +19,7 @@
 # [Remember: No empty lines between comments and class definition]
 class oabjava::params{
 
-	$install_dir	= '/opt'
+	$install_dir	= '/opt/oabjava'
 	$bin_dir		= '/usr/sbin'
 	$binary			= 'oab-java.sh'
 	$install_bin	= "${install_dir}/${binary}"
