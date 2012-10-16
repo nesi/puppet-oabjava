@@ -6,6 +6,46 @@ Oracle Java 6 is the latest distribution of Sun Java 6.
 
 *NOTE:* This module MUST only be used if the Oracle license is agreed to: http://www.oracle.com/technetwork/java/javase/terms/license/
 
+# Dependencies
+
+This Puppet module is dependent on the NeSI Git puppet module:
+
+* https://github.com/nesi/puppet-git
+
+# To install into puppet
+
+Clone into your puppet configuration in your `puppet/modules` directory:
+
+ git clone git://github.com/nesi/puppet-oabjava.git oabjava
+
+Or if you're managing your Puppet configuration with git, in your `puppet` directory:
+
+		git submodule add git://github.com/nesi/puppet-oabjava.git modules/oabjava --init --recursive
+		cd modules/oabjava
+		git checkout master
+		git pull
+		cd ../..
+		git commit -m "added oabjava submodule from https://github.com/nesi/puppet-oabjava"
+
+It might seem bit excessive, but it will make sure the submodule isn't headless...
+
+# Usage
+
+An example of minimal usage of this module:
+
+```
+include git
+include javaoab
+```
+
+# Parameters
+
+* **java7** If set to true, oabjava will install Oracle Java 7, Oracle Java 6 installed by default
+* **clean_old_pkgs** If set to true, oabjava cleans any existing Java packages from the apt cache. The default is 'false'.
+* **skip_if_built** Skips building the deb packages if they already exist, the default is 'true'
+* **gpg_key** Sets a specific GPG key for the local repository, if not set, a random GPG key will be generated and used.
+* **update** If true puppet will check to see that the oab-java.sh script has been updated every time it runs, the default is 'false'
+
 # Attribution
 
 ## Open Source Puppet
