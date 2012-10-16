@@ -22,7 +22,7 @@ class oabjava::install(
 )
 {
 	include oabjava::params
-	require Class['git']
+	require git
 
 	git::repo{'oab-java':
 		path		=> $oabjava::params::install_dir,
