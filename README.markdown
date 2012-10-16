@@ -36,7 +36,14 @@ An example of minimal usage of this module:
 ```
 include git
 include javaoab
+
+package{'sun-java6-jre':
+	ensure 	=> installed,
+	require => Class['oabjava'],
+}
 ```
+
+**NOTE:** the oabjava class does not install Java, it just creates the local debian packages.
 
 # Parameters
 
