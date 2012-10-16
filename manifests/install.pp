@@ -17,7 +17,9 @@
 #
 # This file is part of the oabjava Puppet module.
 # [Remember: No empty lines between comments and class definition]
-class oabjava::install
+class oabjava::install(
+	$update
+)
 {
 	include oabjava::params
 	require Class['git']
@@ -25,6 +27,7 @@ class oabjava::install
 	git::repo{'oab-java':
 		path		=> $oabjava::params::install_dir,
 		source	=> $oabjava::params::git_source,
+		update	=> $update,
 	}
 
 	file{$oabjava::params::exec_bin:

@@ -22,7 +22,7 @@ class oabjava::run(
 	$java7,
 	$clean_old_pkgs,
 	$skip_if_built,
-	$gpg_key
+	$gpg_key,
 ){
 
 	include oabjava::params
