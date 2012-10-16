@@ -24,6 +24,12 @@ class oabjava::install(
 	include oabjava::params
 	require git
 
+	package{'libsane': ensure => installed}
+	package{['ia32-libs','ia32-libs-multiarch']:
+		ensure => installed,
+		require => package['libsane'],
+	}
+
 	git::repo{'oab-java':
 		path		=> $oabjava::params::install_dir,
 		source	=> $oabjava::params::git_source,
