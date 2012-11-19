@@ -31,7 +31,7 @@ It might seem bit excessive, but it will make sure the submodule isn't headless.
 
 # Usage
 
-An example of minimal usage of this module:
+An example of minimal usage of this module to install Sun Java 6:
 
 ```
 include git
@@ -43,7 +43,26 @@ package{'sun-java6-jre':
 }
 ```
 
-**NOTE:** the oabjava class does not install Java, it just creates the local debian packages.
+An example of minimal usage of this module to install Oracle Java 7:
+
+```
+include git
+class{'javaoab':
+	java7 	=> true,
+}
+
+package{'oracle-java7-jre':
+	ensure 	=> installed,
+	require => Class['oabjava'],
+}
+```
+
+**NOTE:** the oabjava class does not install Java, it just creates the local debian packages for all the Java packages available in the binary installer. To list the installed packages:
+
+```
+apt-get update
+apt-cache search '(oracle|sun)-java(6|7)'
+```
 
 # Parameters
 
