@@ -23,6 +23,7 @@ class oabjava::run(
 	$clean_old_pkgs,
 	$skip_if_built,
 	$gpg_key,
+	$oab_timeout
 ){
 
 	include oabjava::params
@@ -54,6 +55,7 @@ class oabjava::run(
 	exec{'run_oabjava':
 		command => $oabjava_command,
 		creates => $oabjava::params::work_path,
+		timeout => $oab_timeout,
 		require => File[$oabjava::params::exec_bin],
 	}
 }

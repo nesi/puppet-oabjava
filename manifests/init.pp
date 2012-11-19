@@ -23,7 +23,8 @@ class oabjava (
 	$clean_old_pkgs	= false,
 	$skip_if_built	= true,
 	$gpg_key				= false,
-	$update					= false
+	$update					= false,
+	$oab_timeout		= 300,
 ){
 
 	require git
@@ -39,6 +40,7 @@ class oabjava (
 				clean_old_pkgs 	=> $clean_old_pkgs,
 				skip_if_built 	=> $skip_if_built,
 				gpg_key 				=> $gpg_key,
+				oab_timeout			=> $oab_timeout,
 			}
 		}
 		default:{

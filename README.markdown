@@ -52,6 +52,7 @@ package{'sun-java6-jre':
 * **skip_if_built** Skips building the deb packages if they already exist, the default is 'true'
 * **gpg_key** Sets a specific GPG key for the local repository, if not set, a random GPG key will be generated and used.
 * **update** If true puppet will check to see that the oab-java.sh script has been updated every time it runs, the default is 'false'
+* **oab_timeout** Sets the timeout for running the `oab_java.sh` script which will vary according to your network speed. Defaults to 300 seconds (5 minutes)
 
 # Attribution
 

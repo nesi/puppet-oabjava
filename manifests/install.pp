@@ -27,7 +27,7 @@ class oabjava::install(
 	package{'libsane': ensure => installed}
 	package{['ia32-libs','ia32-libs-multiarch']:
 		ensure => installed,
-		require => package['libsane'],
+		require => Package['libsane'],
 	}
 
 	git::repo{'oab-java':
