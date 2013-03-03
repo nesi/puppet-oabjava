@@ -9,4 +9,4 @@ project_page 'https://github.com/nesi/puppet-oabjava'
 
 ## Add dependencies, if any:
 # dependency 'username/name', '>= 1.2.0'
-dependency 'aethylred/git', '>=0.0.1'
+dependency 'Aethylred/git', '>=0.0.1'
