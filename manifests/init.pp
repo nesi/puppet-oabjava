@@ -24,7 +24,7 @@ class oabjava (
     $skip_if_built  = true,
     $gpg_key        = false,
     $update         = false,
-    $oab_timeout    = 300,
+    $oab_timeout    = 1800,
 ){
 
     require git
