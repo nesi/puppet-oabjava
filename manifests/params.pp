@@ -8,7 +8,7 @@
 # Actions:
 #
 # Requires:
-#		git - Requires the nesi/git Puppet module
+#       git - Requires the nesi/git Puppet module
 #
 # Sample Usage:
 # This module MUST NOT be used directly, instead use:
@@ -19,12 +19,12 @@
 # [Remember: No empty lines between comments and class definition]
 class oabjava::params{
 
-	$install_dir	= '/opt/oabjava'
-	$bin_dir		= '/usr/sbin'
-	$binary			= 'oab-java.sh'
-	$install_bin	= "${install_dir}/${binary}"
-	$exec_bin		= "${bin_dir}/${binary}"
-	$git_source		= 'https://github.com/flexiondotorg/oab-java6.git'
-	$work_path		= '/var/local/oab'
+    $install_dir    = '/opt/oabjava'
+    $bin_dir        = '/usr/sbin'
+    $binary         = 'oab-java.sh'
+    $install_bin    = "${install_dir}/${binary}"
+    $exec_bin       = "${bin_dir}/${binary}"
+    $git_source     = 'https://github.com/flexiondotorg/oab-java6.git'
+    $work_path      = '/var/local/oab'
 
 }

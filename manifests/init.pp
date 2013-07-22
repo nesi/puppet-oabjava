@@ -12,39 +12,39 @@
 # Actions:
 #
 # Requires:
-#	 git - Requires the nesi/git Puppet module
+#    git - Requires the nesi/git Puppet module
 #
 # Sample Usage:
 #
 # This file is part of the oabjava Puppet module.
 # [Remember: No empty lines between comments and class definition]
 class oabjava (
-	$java7					= false,
-	$clean_old_pkgs	= false,
-	$skip_if_built	= true,
-	$gpg_key				= false,
-	$update					= false,
-	$oab_timeout		= 300,
+    $java7          = false,
+    $clean_old_pkgs = false,
+    $skip_if_built  = true,
+    $gpg_key        = false,
+    $update         = false,
+    $oab_timeout    = 300,
 ){
 
-	require git
+    require git
 
-	case $operatingsystem {
-		/^(Debian|Ubuntu)$/:{
-			include oabjava::params
-			class{'oabjava::install':
-				update	=> $update,
-			} 
-			class{'oabjava::run':
-				java7 					=> $java7,
-				clean_old_pkgs 	=> $clean_old_pkgs,
-				skip_if_built 	=> $skip_if_built,
-				gpg_key 				=> $gpg_key,
-				oab_timeout			=> $oab_timeout,
-			}
-		}
-		default:{
-			warning("The oabjava Puppet module is not configured for ${operatingsystem} on ${fqdn}.")
-		}
-	}
+    case $operatingsystem {
+        /^(Debian|Ubuntu)$/:{
+            include oabjava::params
+            class{'oabjava::install':
+                update  => $update,
+            } 
+            class{'oabjava::run':
+                java7           => $java7,
+                clean_old_pkgs  => $clean_old_pkgs,
+                skip_if_built   => $skip_if_built,
+                gpg_key         => $gpg_key,
+                oab_timeout     => $oab_timeout,
+            }
+        }
+        default:{
+            warning("The oabjava Puppet module is not configured for ${operatingsystem} on ${fqdn}.")
+        }
+    }
 }
