@@ -8,9 +8,9 @@ Oracle Java 6 is the latest distribution of Sun Java 6.
 
 # Dependencies
 
-This Puppet module is dependent on the NeSI Git puppet module:
+This Puppet module is dependent on the Puppetlabs vcsrepo puppet module:
 
-* https://github.com/nesi/puppet-git
+* https://github.com/puppetlabs/puppetlabs-vcsrepo
 
 # To install into puppet
 
@@ -34,8 +34,7 @@ It might seem bit excessive, but it will make sure the submodule isn't headless.
 An example of minimal usage of this module to install Sun Java 6:
 
 ```
-include git
-include javaoab
+include oabjava
 
 package{'sun-java6-jre':
 	ensure 	=> installed,
@@ -47,7 +46,7 @@ An example of minimal usage of this module to install Oracle Java 7:
 
 ```
 include git
-class{'javaoab':
+class{'oabjava':
 	java7 	=> true,
 }
 
