@@ -29,12 +29,6 @@ class oabjava::install(
         require => Package['libsane'],
     }
 
-    git::repo{'oab-java':
-        path    => $oabjava::params::install_dir,
-        source  => $oabjava::params::git_source,
-        update  => $update,
-    }
-
     vcsrepo{$oabjava::params::install_dir:
         ensure      => present,
         provider    => git,
