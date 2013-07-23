@@ -22,7 +22,6 @@ class oabjava::install(
 )
 {
     include oabjava::params
-    require git
 
     package{'libsane': ensure => installed}
     package{['ia32-libs','ia32-libs-multiarch']:
@@ -36,10 +35,16 @@ class oabjava::install(
         update  => $update,
     }
 
+    vcsrepo{$oabjava::params::install_dir:
+        ensure      => present,
+        provider    => git,
+        source      => $oabjava::params::git_source,
+    }
+
     file{$oabjava::params::exec_bin:
         ensure  => link,
         target  => $oabjava::params::install_bin,
         mode    => '0744',
-        require => Git::Repo['oab-java'],
+        require => Vcsrepo[$oabjava::params::install_dir],
     }
 }
