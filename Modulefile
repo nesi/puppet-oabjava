@@ -1,5 +1,5 @@
 name    'nesi-oabjava'
-version '0.0.1'
+version '0.1.0'
 source 'https://github.com/nesi/puppet-oabjava'
 author 'nesi'
 license 'Open-ish'
